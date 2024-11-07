@@ -1,13 +1,20 @@
 body{
     padding: 1rem;
     margin: 0;
+    margin-left: 2rem;
     font-family: Arial, Helvetica, sans-serif;
+    background-color: black;
+    overflow-x: hidden;
 }
 
 header{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: #242323;
+    padding: 0.5rem;
+    border-radius: 50px;
+    
 }
 
 a:hover{
@@ -18,20 +25,27 @@ header h1{
     color: red;
     flex: 1;
     margin: 0;
+    margin-left: 1rem;
 }
 
 h2,h4{
     text-transform: uppercase;
+    color: red;
 }
 
 header nav a{
     text-decoration: none;
-    color: black;
+    color: #c7c5c5;
+    z-index: 2;
+}
+
+header nav a:hover{
+    color: red;
 }
 
 header nav{
     display: flex;
-    gap: 0.5rem;
+    gap: 1rem;
 }
 
 header .nav-menu {
@@ -46,13 +60,35 @@ header .nav-menu {
     justify-content: flex-end;
 }
 
-.user-panel input{
-    background: url("./assets/images/search-icon.png");
-    width: 7rem;
-    background-size: 12%;
-    padding: 0.3rem 1.8rem 0.3rem 0.3rem;
-    background-position: 97% 50%;
-    background-repeat: no-repeat;
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: #333333;
+    border-radius: 20px;
+    padding: 0.5rem 0rem 0.5rem 0.6rem;
+    width: 50%;
+}
+
+.search-container input {
+    width: 100%;
+    border: none;
+    background: none;
+    outline: none;
+    color: #ffffff;
+    font-size: 14px;
+    padding-left: 10px;
+}
+
+.search-container input::placeholder {
+    color: #aaa;
+}
+
+.search-container .search-icon {
+    position: absolute;
+    right: 20px;
+    color: #aaaaaa;
+    font-size: 16px;
 }
 
 .user-panel img{
@@ -60,13 +96,18 @@ header .nav-menu {
     width: 2.5rem;
 }
 
+.notifications{
+    color: #c7c5c5;
+}
+
 .hero{
-    border: 1px solid black;
-    margin: 2rem auto;
+    margin-top: -5rem;
+    margin-bottom: 1.5rem;
     padding: 1rem;
     display: flex;
     align-items: center;
-    aspect-ratio: 5/3;
+    aspect-ratio: 16/9;
+    position: relative;
 }
 
 .user-rating i{
@@ -75,6 +116,7 @@ header .nav-menu {
 
 .user-rating{
     font-weight: bold;
+    color: #c7c5c5;
 }
 
 .movie-duration{
@@ -89,11 +131,18 @@ header .nav-menu {
 }
 
 .main-movie{
+    position: relative;
+    z-index: 1;
     width: 60%;
+}
+
+.main-movie p{
+    color: #c7c5c5;
 }
 
 .movie-details p {
     margin: 0.5rem 0;
+    color: #c7c5c5;
 }
 
 .movie-details p span{
@@ -115,6 +164,20 @@ header .nav-menu {
     margin-right: 0.5rem;
 }
 
+#video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+#video-container iframe {
+    width: 400%;
+    height: 100%;
+    margin-left: -150%;
+}
 
 
 
@@ -124,10 +187,11 @@ header .nav-menu {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 0.5rem;
 }
 
 .suggestion-row-title a{
-    color: gray;
+    color: #c7c5c5;
     text-decoration: none;
 }
 
@@ -137,19 +201,52 @@ header .nav-menu {
 
 .suggestion-row-title h3{
     margin: 0.5rem 0;
+    color: #c7c5c5;
 }
 
 .suggestion-movies{
     display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
     gap: 1.5rem;
+    padding-bottom: 1rem;
+}
+
+.suggestion-movies::-webkit-scrollbar {
+    height: 10px;
+    margin-top: 100px;
+}
+  
+
+.suggestion-movies::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+    
+}
+   
+
+.suggestion-movies::-webkit-scrollbar-thumb {
+    background: red; 
+    border-radius: 10px;
+}
+  
+.suggestion-movies::-webkit-scrollbar-thumb:hover {
+    background: #b30000; 
 }
 
 .movie-card h4{
     margin: 0;
+    color: #c7c5c5;
 }
 
 .content-rating {
     margin-left: 0;
+    color: #c7c5c5;
+}
+
+.movie-duration{
+    color: #c7c5c5;
 }
 
 .movie-card {
@@ -159,7 +256,8 @@ header .nav-menu {
     border-radius: 0.5rem;
     padding: 2rem 1rem;
     min-width: 250px;
-    width: 33%
+    width: 33%;
+    scroll-snap-align: start; 
 }
 
 .suggestion-row {
@@ -169,11 +267,14 @@ header .nav-menu {
 .movie-detail-container{
     display: flex;
     flex-direction: column;
-    garp: 1rem;
+    gap: 1rem;
 }
 
 .movie-detail-container button {
+    background-color: red;
+    color: white;
     font-size: 1rem;
+    border: 0;
     border-radius: 0.4rem;
     padding: 0.5rem 1.8rem;
 }
@@ -195,12 +296,26 @@ footer{
 
 footer h5 {
     margin-top:0;
+    color: #c7c5c5;
 }
 
 .footer-navigation nav {
     display: flex;
     gap: 1rem;
 }
+
+.footer-navigation nav a{
+    color: #c7c5c5;
+}
+
+.footer-navigation nav a:hover{
+    color: red;
+}
+
+.footer-navigation p {
+    color: #c7c5c5;
+}
+
 
 .social-navigation {
     min-width: 120px
@@ -214,9 +329,26 @@ footer h5 {
     height: 2rem
 }
 
+@media (max-width: 900px){
+    .hero{
+        margin-top: 1rem;
+        margin-bottom: 1.5rem;
+        padding: 1.5rem;
+    }
+    #video-container iframe {
+        width: 900%;
+        height: 100%;
+        margin-left: -400%;
+    }
+}
 
 
 @media (max-width: 500px) {
+
+    body{
+        margin-left: 0;
+    }
+
     header {
         flex-wrap: wrap;
     }
@@ -225,7 +357,7 @@ footer h5 {
         order: 1;
         width: 100%;
         justify-content: center;
-        margin-top: 1rem;
+        margin: 1rem 0 0.7rem 0;
     }
 
     header .user-panel {
@@ -234,6 +366,14 @@ footer h5 {
 
     header .nav-menu {
         display: block;
+        margin-right: 2rem;
+        margin-top: 0.5rem;
+        color: #c7c5c5;
+    }
+
+    header h1 {
+        margin-left: 2rem;
+        margin-top: 0.5rem;
     }
 
 
@@ -250,26 +390,16 @@ footer h5 {
         justify-content: center;
     }
 
-    .social-navigation, .mobile-app-navigation {
-        width: 100%;
+    .hero{
+        margin-top: 1rem;
+        margin-bottom: 1.5rem;
+        padding: 2rem;
     }
 
-    .suggestion-movies{
-        flex-direction: column;
-    }
-
-    .movie-card {
-        width: 92%;
-    }
-
-}
-
-@media (max-width: 636px){
-    .suggestion-movies{
-        flex-direction: column;
-    }
-
-    .movie-card {
-        width: 92%;
+    #video-container iframe {
+        width: 500%;
+        height: 100%;
+        margin-left: -200%;
     }
 }
+
