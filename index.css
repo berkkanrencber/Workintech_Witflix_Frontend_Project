@@ -1,0 +1,275 @@
+body{
+    padding: 1rem;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+a:hover{
+    color: red;
+}
+
+header h1{
+    color: red;
+    flex: 1;
+    margin: 0;
+}
+
+h2,h4{
+    text-transform: uppercase;
+}
+
+header nav a{
+    text-decoration: none;
+    color: black;
+}
+
+header nav{
+    display: flex;
+    gap: 0.5rem;
+}
+
+header .nav-menu {
+    display: none;
+}
+
+.user-panel{
+    display: flex;
+    align-items: center;
+    flex: 1;
+    gap: 0.5rem;
+    justify-content: flex-end;
+}
+
+.user-panel input{
+    background: url("./assets/images/search-icon.png");
+    width: 7rem;
+    background-size: 12%;
+    padding: 0.3rem 1.8rem 0.3rem 0.3rem;
+    background-position: 97% 50%;
+    background-repeat: no-repeat;
+}
+
+.user-panel img{
+    border-radius: 100px;
+    width: 2.5rem;
+}
+
+.hero{
+    border: 1px solid black;
+    margin: 2rem auto;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    aspect-ratio: 5/3;
+}
+
+.user-rating i{
+    color: red;
+}
+
+.user-rating{
+    font-weight: bold;
+}
+
+.movie-duration{
+    font-weight: bold;
+}
+
+.content-rating{
+    border: 1px solid black;
+    border-radius: 0.3rem;
+    padding: 0.2rem;
+    margin: 0 0.5rem;
+}
+
+.main-movie{
+    width: 60%;
+}
+
+.movie-details p {
+    margin: 0.5rem 0;
+}
+
+.movie-details p span{
+    color: red;
+    font-weight: bold;
+}
+
+.main-movie button{
+    background-color: red;
+    color: white;
+    border: 0;
+    border-radius: 0.5rem;
+    font-size: 1.2rem;
+    padding: 0.6rem 2.1rem;
+}
+
+.main-movie button i{
+    margin-left: -1rem;
+    margin-right: 0.5rem;
+}
+
+
+
+
+
+
+.suggestion-row-title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.suggestion-row-title a{
+    color: gray;
+    text-decoration: none;
+}
+
+.suggestion-row-title a:hover{
+    color: red;
+}
+
+.suggestion-row-title h3{
+    margin: 0.5rem 0;
+}
+
+.suggestion-movies{
+    display: flex;
+    gap: 1.5rem;
+}
+
+.movie-card h4{
+    margin: 0;
+}
+
+.content-rating {
+    margin-left: 0;
+}
+
+.movie-card {
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 0.5rem;
+    padding: 2rem 1rem;
+    min-width: 250px;
+    width: 33%
+}
+
+.suggestion-row {
+    margin-bottom: 2rem;
+}
+
+.movie-detail-container{
+    display: flex;
+    flex-direction: column;
+    garp: 1rem;
+}
+
+.movie-detail-container button {
+    font-size: 1rem;
+    border-radius: 0.4rem;
+    padding: 0.5rem 1.8rem;
+}
+
+.movie-detail-container button i{
+    margin-left: -0.8rem;
+    margin-right: 0.3rem;
+}
+
+
+
+
+
+footer{
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+footer h5 {
+    margin-top:0;
+}
+
+.footer-navigation nav {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-navigation {
+    min-width: 120px
+}
+
+.mobile-app-navigation {
+    min-width: 230px;
+}
+
+.mobile-app-navigation img {
+    height: 2rem
+}
+
+
+
+@media (max-width: 500px) {
+    header {
+        flex-wrap: wrap;
+    }
+
+    header nav {
+        order: 1;
+        width: 100%;
+        justify-content: center;
+        margin-top: 1rem;
+    }
+
+    header .user-panel {
+        display: none;
+    }
+
+    header .nav-menu {
+        display: block;
+    }
+
+
+    .main-movie {
+        width: 100%;
+    }
+
+    footer {
+        flex-wrap: wrap;
+        text-align: center;
+    }
+
+    footer nav {
+        justify-content: center;
+    }
+
+    .social-navigation, .mobile-app-navigation {
+        width: 100%;
+    }
+
+    .suggestion-movies{
+        flex-direction: column;
+    }
+
+    .movie-card {
+        width: 92%;
+    }
+
+}
+
+@media (max-width: 636px){
+    .suggestion-movies{
+        flex-direction: column;
+    }
+
+    .movie-card {
+        width: 92%;
+    }
+}
